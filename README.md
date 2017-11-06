@@ -1,6 +1,6 @@
-# Kiosk
-<H1>Raspberry Pi Kiosk Using Chromium</H1>
-=================================
+# Raspberry Pi Kiosk Using Chromium
+==================================== 
+<br>
 sudo apt-get update && sudo apt-get upgrade -y
 
 sudo apt-get install chromium x11-xserver-utils unclutter
