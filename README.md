@@ -21,12 +21,12 @@ iface eth0 inet dhcp to iface eth0 inet static
 
 Now you’ll need to add 3 lines straight after if they aren’t already there.
 
-address xxx.xxx.xxx.xxx
-netmask 255.255.255.0
-gateway xxx.xxx.xxx.xxx
-network xxx.xxx.xxx.xxx
-broadcast xxx.xxx.xxx.xxx
-dns-nameservers xxx.xxx.xxx.xxx,xxx.xxx.xxx.xxx
+address xxx.xxx.xxx.xxx <br>
+netmask 255.255.255.0 <br>
+gateway xxx.xxx.xxx.xxx <br>
+network xxx.xxx.xxx.xxx <br>
+broadcast xxx.xxx.xxx.xxx <br>
+dns-nameservers xxx.xxx.xxx.xxx,xxx.xxx.xxx.xxx <br>
 
 Raspberry PI Kiosk - Network Settings
 =====================================
@@ -49,8 +49,8 @@ I’ll explain the steps for using a terminal window, if you are using Putty the
 
 Raspberry SSH 
 =============
-So still on the 2nd computer open up a terminal window and type
-ssh pi@xxx.xxx.xxx.xxx
+So still on the 2nd computer open up a terminal window and type <br>
+ssh pi@xxx.xxx.xxx.xxx <br>
 Where the X’s represent the static address you gave your Pi in the previous part. If it’s worked you should be asked for your password. Enter the password you chose for your Pi and cross your fingers!
 Now you should be greeted with a pi@xxx command prompt, this means you are now logged in and directly controlling your Pi.
 
