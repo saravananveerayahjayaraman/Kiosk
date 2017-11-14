@@ -75,9 +75,9 @@ To disable the screensaver add a # to the beginning of the line, this comments t
 
 Next add these lines underneath the screensaver line
 
-@xset s off
-@xset -dpms
-@xset s noblank
+@xset s off <br>
+@xset -dpms <br>
+@xset s noblank <br>
 
 This disables power management settings and stops the screen blanking after a period of inactivity.
 
