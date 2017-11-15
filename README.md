@@ -31,15 +31,15 @@ dns-nameservers xxx.xxx.xxx.xxx,xxx.xxx.xxx.xxx <br>
 Raspberry PI Kiosk - Network Settings
 =====================================
 Adding in the static address you would like to use next to the address line and then your gateway address which you noted down earlier into gateway. Gateway is usually the address of your router so if you forgot to write it down you can work it out that way. Remember to use an address that isn’t in the DHCP pool for your router to avoid any conflicts later on with other users on your network. Now hit ctrl-O to write the file and then ctrl+X to get yourself back to your terminal screen.
-Now that you have a static address set you can enable SSH on the pi. We’ll use the wizard that comes with raspbian to do this.
+Now that you have a static address set you can enable SSH on the pi. We’ll use the wizard that comes with raspbian to do this for Raspberry Pi which is raspi-config
+
+Raspberry Pi Kiosk - Raspi-Config
+=================================
 In terminal type
 
 sudo raspi-config
 
 First step should be to change your user password which should be option 2. The default username is pi and the default password is raspberry.
-
-Raspberry Pi Kiosk - Raspi-Config
-=================================
 
 Once you’ve changed your password head to option 8 – Advanced Options and then option A4 – SSH and just hit enabled.
 
@@ -79,24 +79,14 @@ Next add these lines underneath the screensaver line
 @xset -dpms <br>
 @xset s noblank <br>
 
-This disables power management settings and stops the screen blanking after a period of inactivity.
-
-Now that is done we should prevent any error messages displaying on the screen in the instance that someone accidentally power cycles the pi without going through the shutdown procedure. To do this we add the following line underneath the lines you just added.
-
-@sed -i 's/"exited_cleanly": false/"exited_cleanly": true/' ~/.config/chromium/Default/Preferences
+This above settings disables power management settings and stops the screen blanking after a period of inactivity.
 
 Finally we need to tell chromium to start and which page to load once it boots without error dialogs and in Kiosk mode. To do this add the following line to the bottom of this autostart file.
 
-@chromium --noerrdialogs --kiosk http://www.page-to.display
+@chromium --noerrdialogs --kiosk http://www.pagetodisplay.com --incognito
 
-Thanks to a comment from Rikard Eriksson below it seems you may now need to add the incognito flag to ensure no warnings are displayed if you pull the power without first shutting down see below.
-
-
-@chromium --noerrdialogs --kiosk http://www.page-to.display --incognito
-
-Obviously replace page-to.display with whatever page you want to load. In my case I’m just connecting to the webserver I’ve setup on our network which has our database and my backup system.
-
-Raspberry Pi Kisok - LXDE config
+Obviously replace www.pagetodisplay.com with whatever page you want to load. 
+In my case I’m just connecting to the webserver I’ve setup on our network which has our database and my backup system.
 
 Hit ctrl-O and then ctrl-X again to write out and exit the file and now type
 
