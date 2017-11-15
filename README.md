@@ -69,9 +69,11 @@ Please note, some of my commenters have mentioned that if you’re using NOOBs y
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 
 As you can probably guess this is a file that runs when your pi boots.
-To disable the screensaver add a # to the beginning of the line, this comments the line out.
-
+To disable the screensaver add a # to the beginning of the line, this comments the line out. 
+For example change this line from
 @xscreensaver -no-splash
+to 
+#@xscreensaver -no-splash
 
 Next add these lines underneath the screensaver line
 
